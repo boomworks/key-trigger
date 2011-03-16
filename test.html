@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>key-trigger test</title>
+	</head>
+	<body>
+
+		<h1>key-trigger test</h1>
+
+		<textarea></textarea>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="jquery.key-trigger-0.0.1.js"></script>
+		<script>
+			$(function(){
+
+				$.keyTrigger('asd', function(s){
+					$('body').append('<p>'+s+'</p>');
+				});
+
+				$.keyTrigger('abcd', function(s){
+					$('body').append('<p>'+s+'</p>');
+				}, $('textarea'));
+
+				$.keyTrigger('hooray', function(s){
+					$('body').append('<p>Hooray!</p>');
+				});
+
+			});
+		</script>
+
+	</body>
+</html>
