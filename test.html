@@ -9,12 +9,25 @@
 		<h1>key-trigger test</h1>
 
 		<textarea></textarea>
+		<input>
+
+		<textarea class="t2"></textarea>
+		<input class="t2">
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-		<script src="jquery.key-trigger-0.0.1.js"></script>
+		<script src="jquery.key-trigger.js"></script>
 		<script>
 			$(function(){
 
+				$('textarea, input').keyTrigger('test', function(s){
+					console.log(s, this);
+				});
+				$('.t2').keyTrigger('test', function(s){
+					console.log('t2', s, this);
+				});
+
+
+/*
 				$.keyTrigger('asd', function(s){
 					$('body').append('<p>'+s+'</p>');
 				});
@@ -26,7 +39,12 @@
 				$.keyTrigger('hooray', function(s){
 					$('body').append('<p>Hooray!</p>');
 				});
-
+				$.keyTrigger('na na na na na', function(){
+					var s = document.createElement('script');
+					s.src = 'http://kathack.com/js/kh.js';
+					document.body.appendChild(s);
+				});
+*/
 			});
 		</script>
 
